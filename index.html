@@ -1,0 +1,353 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Don Juan Teñoso | Zairha</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Pacifico&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #ffe3ef;
+    font-family: 'Poppins', sans-serif;
+    color: #713c55;
+    overflow-x: hidden;
+}
+
+/* Background */
+.background {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background:
+      radial-gradient(circle at 20% 20%, #fff8fb 0 2px, transparent 3px),
+      radial-gradient(circle at 80% 70%, #f5a9ca 0 2px, transparent 3px),
+      #ffe3ef;
+    background-size: 35px 35px, 45px 45px, auto;
+}
+
+/* Floating decorations */
+.sparkle {
+    position: fixed;
+    color: #e88db5;
+    font-size: 27px;
+    pointer-events: none;
+    animation: sparkle 4s infinite ease-in-out;
+}
+
+.s1 { top: 10%; left: 7%; }
+.s2 { top: 25%; right: 8%; animation-delay: 1s; }
+.s3 { bottom: 15%; left: 9%; animation-delay: 2s; }
+.s4 { bottom: 12%; right: 8%; animation-delay: .5s; }
+
+@keyframes sparkle {
+    0%,100% {
+        opacity: .4;
+        transform: scale(.7) rotate(0deg);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.3) rotate(25deg);
+    }
+}
+
+/* Main page */
+.wrapper {
+    width: 100%;
+    max-width: 850px;
+    margin: 45px auto;
+    padding: 20px;
+}
+
+.card {
+    position: relative;
+    background: #fff8fb;
+    border: 3px solid #e9a0bf;
+    border-radius: 28px;
+    padding: 35px 25px;
+    text-align: center;
+    box-shadow: 0 12px 35px #d98bad55;
+    overflow: hidden;
+    animation: appear 1s ease;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Header */
+.top {
+    display: inline-block;
+    padding: 9px 24px;
+    border-radius: 30px;
+    background: #f6c1d7;
+    color: #914b6b;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.crown {
+    font-size: 48px;
+    margin-top: 25px;
+    animation: float 3s infinite ease-in-out;
+}
+
+@keyframes float {
+    50% { transform: translateY(-10px); }
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(40px, 8vw, 70px);
+    line-height: 1.05;
+    color: #d76f9d;
+    margin: 12px 0;
+    text-shadow: 2px 3px #f9d1e2;
+}
+
+.subtitle {
+    font-size: 12px;
+    letter-spacing: 4px;
+    color: #a66b85;
+    font-weight: 700;
+}
+
+/* Divider */
+.divider {
+    width: 75%;
+    height: 2px;
+    margin: 25px auto;
+    background: linear-gradient(
+        to right,
+        transparent,
+        #e7a0bd,
+        transparent
+    );
+}
+
+/* Credits */
+.credits {
+    background: #fff0f6;
+    border: 2px dashed #e8a2bf;
+    border-radius: 22px;
+    padding: 28px 18px;
+    margin: 25px auto;
+    max-width: 650px;
+}
+
+.heading {
+    font-family: 'Playfair Display', serif;
+    color: #c85e8b;
+    font-size: 30px;
+    margin-bottom: 22px;
+}
+
+.label {
+    color: #cf79a0;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin-top: 22px;
+}
+
+.value {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(20px, 4vw, 29px);
+    color: #75445b;
+    margin-top: 6px;
+    font-weight: 700;
+}
+
+.ornament {
+    color: #e89bbb;
+    font-size: 20px;
+    margin: 15px;
+}
+
+/* About */
+.about {
+    margin: 30px auto;
+    max-width: 650px;
+    background: #f9d9e7;
+    padding: 28px 22px;
+    border-radius: 25px;
+    border: 2px solid #e9a9c4;
+}
+
+.about h2 {
+    font-family: 'Playfair Display', serif;
+    color: #b95781;
+    font-size: 27px;
+    margin-bottom: 12px;
+}
+
+.about p {
+    line-height: 1.9;
+    font-size: 14px;
+}
+
+/* Ending */
+.ending {
+    background: linear-gradient(135deg, #f6bcd4, #fbdce9);
+    border-radius: 25px;
+    padding: 30px 18px;
+    margin-top: 30px;
+    border: 2px solid #e5a0bd;
+}
+
+.ending .quote {
+    font-family: 'Pacifico', cursive;
+    font-size: 19px;
+    color: #98516f;
+    line-height: 1.8;
+}
+
+.ending h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(25px, 5vw, 38px);
+    color: #b54f7c;
+    margin: 20px 0;
+}
+
+.end-tag {
+    display: inline-block;
+    background: #c96d95;
+    color: white;
+    border-radius: 30px;
+    padding: 12px 25px;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-top: 15px;
+}
+
+footer {
+    margin-top: 28px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #a87990;
+    font-weight: 700;
+}
+
+@media(max-width: 500px) {
+    .wrapper {
+        margin: 15px auto;
+        padding: 12px;
+    }
+
+    .card {
+        padding: 25px 13px;
+    }
+
+    .credits {
+        padding: 25px 10px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="background"></div>
+
+<div class="sparkle s1">✧</div>
+<div class="sparkle s2">♡</div>
+<div class="sparkle s3">✦</div>
+<div class="sparkle s4">✧</div>
+
+<main class="wrapper">
+<div class="card">
+
+    <div class="top">A SPECIAL FILIPINO EDITION</div>
+
+    <div class="crown">👑</div>
+
+    <h1>DON JUAN<br>TEÑOSO</h1>
+
+    <p class="subtitle">A FILIPINO COMIC BOOK PROJECT</p>
+
+    <div class="divider">♡ ✧ ♡</div>
+
+    <section class="credits">
+
+        <h2 class="heading">✿ Project Credits ✿</h2>
+
+        <div class="label">CREATED BY</div>
+        <div class="value">
+            ZAIRHA MHAI AKIRHA<br>
+            O. ASUSULA
+        </div>
+
+        <div class="ornament">❀ ───── ♡ ───── ❀</div>
+
+        <div class="label">SUBMITTED TO</div>
+        <div class="value">Mrs. Leicel Nazaret</div>
+
+        <div class="ornament">❀ ───── ♡ ───── ❀</div>
+
+        <div class="label">SUBJECT</div>
+        <div class="value">Filipino</div>
+
+        <div class="ornament">❀ ───── ♡ ───── ❀</div>
+
+        <div class="label">SCHOOL YEAR</div>
+        <div class="value">2026 – 2027</div>
+
+    </section>
+
+    <section class="about">
+        <h2>♡ About This Project ♡</h2>
+
+        <p>
+        This comic book is a creative adaptation of
+        the timeless Filipino story of Don Juan Teñoso.
+        Through illustrations and storytelling, this
+        project brings literature to life and celebrates
+        the beauty of imagination and Filipino culture.
+        </p>
+    </section>
+
+    <section class="ending">
+
+        <p class="quote">
+        "Behind every page is a story,
+        and behind every story is a little magic."
+        </p>
+
+        <h2>THANK YOU FOR READING!</h2>
+
+        <p>May your imagination always bloom. ♡</p>
+
+        <div class="end-tag">
+            ✿ END OF COMIC BOOK ✿
+        </div>
+
+    </section>
+
+    <footer>
+        MADE WITH LOVE & CREATIVITY
+        <br><br>
+        © 2026 ZAIRHA MHAI AKIRHA O. ASUSULA
+    </footer>
+
+</div>
+</main>
+
+</body>
+</html>
